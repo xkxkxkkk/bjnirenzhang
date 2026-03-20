@@ -1,0 +1,361 @@
+.visit {
+  background: var(--ink-deep);
+  min-height: 100vh;
+}
+
+/* 页头 */
+.visit__header {
+  position: relative;
+  padding: 12rem 0 6rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.visit__header-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,168,67,0.06) 0%, transparent 70%),
+    var(--ink-dark);
+}
+
+.visit__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 400;
+  color: var(--paper-light);
+  letter-spacing: 0.15em;
+  margin: 0.5rem 0 1rem;
+  position: relative;
+}
+
+.visit__subtitle {
+  font-size: 0.85rem;
+  color: var(--gray-warm-1);
+  letter-spacing: 0.15em;
+  position: relative;
+}
+
+/* 位置 */
+.visit__location {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  min-height: 480px;
+}
+
+.visit__map-placeholder {
+  background: var(--ink-mid);
+  position: relative;
+  overflow: hidden;
+}
+
+.visit__map-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visit__map-streets {
+  position: absolute;
+  inset: 0;
+}
+
+.visit__map-street {
+  position: absolute;
+  background: rgba(212,168,67,0.06);
+}
+
+.visit__map-street--h {
+  left: 0;
+  right: 0;
+  height: 30px;
+}
+
+.visit__map-street--v {
+  top: 0;
+  bottom: 0;
+  width: 30px;
+}
+
+.visit__map-pin {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.visit__map-pin-icon {
+  font-size: 2.5rem;
+  animation: pinBounce 2s ease-in-out infinite;
+}
+
+@keyframes pinBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.visit__map-pin-label {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--gold-bright);
+  letter-spacing: 0.2em;
+  background: rgba(13,11,8,0.7);
+  padding: 0.4rem 1rem;
+}
+
+.visit__map-hint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  color: var(--gray-warm-2);
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+
+.visit__address-card {
+  background: var(--ink-dark);
+  padding: 4rem 3rem;
+  border-left: 1px solid rgba(212,168,67,0.1);
+}
+
+.visit__address-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--paper-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.visit__address-section {
+  height: 100%;
+}
+
+.visit__address-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  margin-bottom: 1.8rem;
+}
+
+.visit__address-icon {
+  font-size: 1rem;
+  width: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.visit__address-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--gray-warm-1);
+  margin-bottom: 0.3rem;
+}
+
+.visit__address-value {
+  font-size: 0.88rem;
+  color: var(--paper-cream);
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+
+/* 开放时间 */
+.visit__hours {
+  padding: 7rem 0;
+  background: var(--ink-deep);
+}
+
+.visit__hours-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(212,168,67,0.08);
+}
+
+.visit__hours-card {
+  background: var(--ink-dark);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.visit__hours-card:hover {
+  background: rgba(212,168,67,0.03);
+}
+
+.visit__hours-day {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--gray-warm-1);
+  margin-bottom: 1rem;
+}
+
+.visit__hours-time {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--paper-cream);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.8rem;
+}
+
+.visit__hours-note {
+  font-size: 0.7rem;
+  color: var(--gold-warm);
+  letter-spacing: 0.15em;
+}
+
+/* 票价 */
+.visit__tickets {
+  padding: 7rem 0;
+  background: var(--ink-dark);
+}
+
+.visit__tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.visit__ticket-card {
+  border: 1px solid rgba(212,168,67,0.1);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.visit__ticket-card:hover {
+  border-color: rgba(212,168,67,0.35);
+  transform: translateY(-4px);
+}
+
+.visit__ticket-type {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--gray-warm-1);
+  margin-bottom: 1.5rem;
+}
+
+.visit__ticket-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.visit__ticket-currency {
+  font-size: 1rem;
+  color: var(--gold-warm);
+}
+
+.visit__ticket-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--gold-bright);
+  letter-spacing: -0.02em;
+}
+
+.visit__ticket-free {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--gold-bright);
+  letter-spacing: 0.1em;
+}
+
+.visit__ticket-desc {
+  font-size: 0.72rem;
+  color: var(--gray-warm-1);
+  letter-spacing: 0.1em;
+  line-height: 1.7;
+}
+
+/* FAQ */
+.visit__faq {
+  padding: 7rem 0;
+  background: var(--ink-deep);
+}
+
+.visit__faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.visit__faq-item {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.visit__faq-q {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--paper-cream);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.8rem;
+}
+
+.visit__faq-a {
+  font-size: 0.85rem;
+  color: var(--gray-warm-1);
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+}
+
+/* CTA */
+.visit__cta {
+  padding: 6rem 0 8rem;
+  background: var(--ink-dark);
+  text-align: center;
+  border-top: 1px solid rgba(212,168,67,0.08);
+}
+
+.visit__cta-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--paper-light);
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+
+.visit__cta-sub {
+  font-size: 0.82rem;
+  color: var(--gray-warm-1);
+  letter-spacing: 0.15em;
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+  .visit__location {
+    grid-template-columns: 1fr;
+  }
+  .visit__map-placeholder {
+    height: 300px;
+  }
+  .visit__tickets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .visit__hours-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .visit__address-card {
+    padding: 2.5rem 1.5rem;
+  }
+  .visit__tickets-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}

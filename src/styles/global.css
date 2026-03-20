@@ -1,0 +1,175 @@
+/* ═══════════════════════════════════════════
+   泥人张 · 全局设计系统
+   Oriental Museum Aesthetic
+═══════════════════════════════════════════ */
+
+:root {
+  /* 墨色系 */
+  --ink-deep: #0d0b08;
+  --ink-dark: #1a1610;
+  --ink-mid: #2c2519;
+  --ink-light: #3d3426;
+  
+  /* 纸色系 */
+  --paper-warm: #f5f0e8;
+  --paper-light: #faf7f2;
+  --paper-cream: #ede7d9;
+  --paper-muted: #d4cbbf;
+  
+  /* 金色系 */
+  --gold-bright: #d4a843;
+  --gold-warm: #c8962e;
+  --gold-deep: #a07828;
+  --gold-subtle: rgba(212, 168, 67, 0.15);
+  
+  /* 朱砂红 */
+  --vermillion: #c0392b;
+  --vermillion-soft: rgba(192, 57, 43, 0.08);
+  
+  /* 灰调 */
+  --gray-warm-1: #8a8070;
+  --gray-warm-2: #6b6358;
+  --gray-warm-3: #4a4438;
+  
+  /* 字体 */
+  --font-serif: 'Noto Serif SC', 'Source Han Serif SC', 'SimSun', serif;
+  --font-display: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  --font-sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  
+  /* 间距 */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-2xl: 8rem;
+  
+  /* 过渡 */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --duration-fast: 0.2s;
+  --duration-mid: 0.5s;
+  --duration-slow: 0.9s;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--ink-deep);
+  color: var(--paper-warm);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-warm);
+  border-radius: 2px;
+}
+
+/* 选中文本样式 */
+::selection {
+  background: var(--gold-subtle);
+  color: var(--gold-bright);
+}
+
+/* 基础链接 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 图片基础 */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* 页面过渡容器 */
+.page-wrapper {
+  min-height: 100vh;
+}
+
+/* 分隔线 */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold-warm);
+  margin: var(--space-lg) 0;
+}
+
+.divider--center {
+  margin: var(--space-lg) auto;
+}
+
+/* 通用容器 */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+/* 文字渐入动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 纸纹背景纹理 */
+.texture-paper {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* 墨晕效果 */
+.ink-wash {
+  background: radial-gradient(ellipse at center, var(--ink-mid) 0%, var(--ink-deep) 70%);
+}

@@ -1,0 +1,251 @@
+.gallery {
+  background: var(--ink-deep);
+  min-height: 100vh;
+}
+
+/* 页头 */
+.gallery__header {
+  position: relative;
+  padding: 12rem 0 6rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.gallery__header-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,168,67,0.06) 0%, transparent 70%),
+    var(--ink-dark);
+}
+
+.gallery__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 400;
+  color: var(--paper-light);
+  letter-spacing: 0.15em;
+  margin: 0.5rem 0 1rem;
+  position: relative;
+}
+
+.gallery__subtitle {
+  font-size: 0.85rem;
+  color: var(--gray-warm-1);
+  letter-spacing: 0.15em;
+  position: relative;
+}
+
+/* 筛选栏 */
+.gallery__filter {
+  background: var(--ink-dark);
+  border-bottom: 1px solid rgba(212,168,67,0.1);
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+}
+
+.gallery__cats {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.gallery__cats::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery__cat {
+  padding: 1.2rem 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--gray-warm-1);
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s;
+  position: relative;
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+.gallery__cat::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gold-bright);
+  transition: width 0.3s var(--ease-out);
+}
+
+.gallery__cat:hover {
+  color: var(--paper-cream);
+}
+
+.gallery__cat--active {
+  color: var(--gold-bright);
+}
+
+.gallery__cat--active::after {
+  width: 80%;
+}
+
+/* 作品网格 */
+.gallery__main {
+  padding: 5rem 0;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.gallery__item-wrapper {
+  width: 100%;
+}
+
+.gallery__item {
+  display: block;
+  position: relative;
+}
+
+.gallery__img-wrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--ink-mid);
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease-out);
+}
+
+.gallery__item:hover .gallery__img {
+  transform: scale(1.08);
+}
+
+.gallery__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,11,8,0.8) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.gallery__item:hover .gallery__img-overlay {
+  opacity: 1;
+}
+
+.gallery__img-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.gallery__item-cat {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-bright);
+}
+
+.gallery__item-year {
+  font-size: 0.7rem;
+  color: var(--paper-muted);
+  letter-spacing: 0.1em;
+}
+
+.gallery__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--gold-warm);
+  color: var(--ink-deep);
+  font-size: 0.6rem;
+  padding: 0.2rem 0.6rem;
+  letter-spacing: 0.2em;
+}
+
+.gallery__item-meta {
+  padding: 1rem 0 0;
+}
+
+.gallery__item-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--paper-cream);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+  transition: color 0.2s;
+}
+
+.gallery__item:hover .gallery__item-title {
+  color: var(--gold-bright);
+}
+
+.gallery__item-artist {
+  font-size: 0.75rem;
+  color: var(--gray-warm-1);
+  letter-spacing: 0.08em;
+}
+
+.gallery__empty {
+  text-align: center;
+  padding: 5rem 0;
+  color: var(--gray-warm-1);
+  letter-spacing: 0.2em;
+}
+
+.gallery__footer {
+  padding: 3rem 0 5rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.gallery__footer-text {
+  font-size: 0.8rem;
+  color: var(--gray-warm-1);
+  letter-spacing: 0.1em;
+}
+
+.gallery__footer-link {
+  color: var(--gold-warm);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+  margin-left: 0.3rem;
+}
+
+.gallery__footer-link:hover {
+  border-color: var(--gold-warm);
+}
+
+@media (max-width: 1024px) {
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+}
