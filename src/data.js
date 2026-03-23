@@ -186,7 +186,7 @@ export const heritagePersons = [
     years: "1893—1961",
     title: "薪火传承",
     description: "在动荡年代坚守艺术，保留了大量珍贵的泥人张作品和制作技艺。其作品神韵沉稳，题材多涉吉祥民俗，深受民间喜爱。",
-    image: "./src/images/zhangjinghuo.jpg",
+    image: "/images/zhangjinghuo.jpg",
   },
     {
     name: "张錩",
@@ -194,7 +194,7 @@ export const heritagePersons = [
     years: "1942—2023/1/9",
     title: "承古开新",
     description: "张錩因在创作中融汇了高等学府与国内外艺术之长孕育出来的艺术修养和审美，作品追求强烈的装饰性和现代感，颠覆了传统的造型观念。",
-    image: "./src/images/zhangchang.jpg",
+    image: "/images/zhangchang.jpg",
   },
 ];
 
