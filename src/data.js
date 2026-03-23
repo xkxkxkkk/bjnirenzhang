@@ -170,7 +170,7 @@ export const heritagePersons = [
     years: "1826—1906",
     title: "开山祖师",
     description: "字长林，天津人。自幼随父习艺，后博采众长，独创一派。其作品以写实见长，人物面部表情尤为生动传神，奠定了泥人张彩塑的艺术基础。",
-    image: "./src/images/zhangmingshan.jpg",
+    image: "/images/zhangmingshan.jpg",
   },
   {
     name: "张玉亭",
@@ -178,7 +178,7 @@ export const heritagePersons = [
     years: "1867—1951",
     title: "承前启后",
     description: "张明山长子，承父衣钵而发扬光大。擅长戏曲人物和民间故事题材，彩绘技法更趋精熟，将泥人张推向了一个新的艺术高度。",
-    image: "./src/images/zhangyuting.jpg",
+    image: "/images/zhangyuting.jpg",
   },
   {
     name: "张景祜",
