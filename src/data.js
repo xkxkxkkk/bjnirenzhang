@@ -41,7 +41,7 @@ export const artworks = [
   {
     id: 4,
     title: "钟馗嫁妹",
-    artist: "张铭",
+    artist: "张錩",
     year: "1950年代",
     size: "高约30cm",
     category: "戏曲",
@@ -65,7 +65,7 @@ export const artworks = [
   {
     id: 6,
     title: "俏花旦",
-    artist: "张宇",
+    artist: "张昊",
     year: "2005年",
     size: "高约20cm",
     category: "戏曲",
@@ -77,7 +77,7 @@ export const artworks = [
   {
     id: 7,
     title: "天津老街",
-    artist: "张忠强",
+    artist: "张錩",
     year: "1980年代",
     size: "高约28cm",
     category: "风俗",
@@ -89,7 +89,7 @@ export const artworks = [
   {
     id: 8,
     title: "荷塘月色",
-    artist: "张宇",
+    artist: "张昊",
     year: "2018年",
     size: "高约32cm",
     category: "意境",
